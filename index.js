@@ -99,7 +99,6 @@ app.get("/posts/:postName", (req,res)=>{
             day: post.day,
             content: post.input
            })
-           console.log("success")
         }
        
     });
