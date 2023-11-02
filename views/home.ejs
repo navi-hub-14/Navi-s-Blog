@@ -10,9 +10,9 @@
 <section id="posts" class="section container">
    <%    posts.forEach((post)=>{  %>
       <h1 class="subtag inputTitle"><%= post.title %></h1>
-   <h3 class="day"><%= post.day %></h3>
+   <h3 class="content day"><%= post.day %></h3>
    <p class="content">
-       <%= post.input %>
+       <%= post.input.slice(0,97)+"..." %> <a href="/posts/<%= post.title %>">Read More</a>
    </p>
    <%    }) %>
    

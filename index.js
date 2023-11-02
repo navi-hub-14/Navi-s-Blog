@@ -27,7 +27,9 @@ const monthNumber = new Date().getMonth();
             }
     }
 
-let posts = [{title:"I did it!!!", day:"1, November, 2023", input: "Happy to complete this challenge"}];
+let posts = 
+[{title:"I did it!!!", day:"2, November, 2023",
+ input: "I'm thrilled to announce that I've successfully conquered the web blog app-making challenge!. The instructions given by Angela Mam were invaluable; she taught me many new things. I am very happy and excited to move on to the next module, which is all about the database section. I'm confident that I can achieve success in that as well. Thank you, Angela Mam, and thank you, Udemy"}];
 
 
 app.use(express.static("public"));
@@ -36,7 +38,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 const homeContent = "Welcome to our blog, your one-stop destination for insightful articles, exciting stories, and a wealth of knowledge on a wide range of topics. Whether you're passionate about travel, technology, lifestyle, or anything in between, our blog has something for everyone. We believe in the power of sharing experiences and ideas, and our dedicated team of writers is here to bring you fresh and engaging content. Explore our collection of articles, tips, and personal narratives that inspire, inform, and entertain. Plus, we encourage you to become a part of our growing community by contributing your unique perspective. Share your own stories, expertise, and interests with our readers. We can't wait to read your blogs and connect with you on this exciting journey of learning and discovery."
 
-const aboutContent ="Welcome to our blog, your one-stop destination for insightful articles, exciting stories, and a wealth of knowledge on a wide range of topics. Whether you're passionate about travel, technology, lifestyle, or anything in between, our blog has something for everyone. We believe in the power of sharing experiences and ideas, and our dedicated team of writers is here to bring you fresh and engaging content. Explore our collection of articles, tips, and personal narratives that inspire, inform, and entertain. Plus, we encourage you to become a part of our growing community by contributing your unique perspective. Share your own stories, expertise, and interests with our readers. We can't wait to read your blogs and connect with you on this exciting journey of learning and discovery."
+const aboutContent ="This web blog is created by Vinaya G as a part of Udemy's highly-rated course, 'Web Development Bootcamp,' taught by the lead instructor, Madam Angela Yu, the founder of App Brewery. You can test this website by composing blogs. To compose blogs on this website, click the website's URL and add '/compose,' then click 'Enter,' compose, and publish. Please note that this website does not contain a database, so any content you type will not be saved after a refresh."
+
 
 const contactContent = `<p class="content">Email: maunykrishna@gmail.com<br>Mobile: 9198451588</p>`
 
@@ -52,7 +55,6 @@ app.get("/", (req, res)=>{
 
 app.get("/about", (req, res)=>{
     res.render("about.ejs",{aboutContent: aboutContent});
-    console.log(req.params);
 
 })
 
@@ -81,7 +83,7 @@ app.post("/compose", (req, res)=>{
     res.redirect("/");
 })
 
-app.get("/posts/:postName", function(req,res){
+app.get("/posts/:postName", (req,res)=>{
 
     var parameter = _.lowerCase(req.params.postName);
     
@@ -91,19 +93,18 @@ app.get("/posts/:postName", function(req,res){
 
         if(parameter === postTitle){
 
-           res.render("post.ejs",{
+           res.render("post.ejs", 
+           {
             title: post.title,
             day: post.day,
             content: post.input
            })
            console.log("success")
         }
-        else{
-            console.log("error",parameter, postTitle)
-        }
-    })
+       
+    });
 
-})
+});
 
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
