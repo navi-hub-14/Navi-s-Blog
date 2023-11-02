@@ -1,8 +1,23 @@
-<%- include("header.ejs")  %>
+<%- include("partials/header.ejs")  %>
+
 <section id="home" class="section container">
     <h1 class="tag">Home</h1>
     <p class="content">
-        Welcome to our blog, your one-stop destination for insightful articles, exciting stories, and a wealth of knowledge on a wide range of topics. Whether you're passionate about travel, technology, lifestyle, or anything in between, our blog has something for everyone. We believe in the power of sharing experiences and ideas, and our dedicated team of writers is here to bring you fresh and engaging content. Explore our collection of articles, tips, and personal narratives that inspire, inform, and entertain. Plus, we encourage you to become a part of our growing community by contributing your unique perspective. Share your own stories, expertise, and interests with our readers. We can't wait to read your blogs and connect with you on this exciting journey of learning and discovery.
+       <%= homeContent %>
     </p>
 </section>
-<%- include("footer.ejs")  %>
+
+<section id="posts" class="section container">
+   <%    posts.forEach((post)=>{  %>
+      <h1 class="subtag inputTitle"><%= post.title %></h1>
+   <h3 class="day"><%= post.day %></h3>
+   <p class="content">
+       <%= post.input %>
+   </p>
+   <%    }) %>
+   
+   </section>
+</main>
+
+
+<%- include("partials/footer.ejs")  %>
