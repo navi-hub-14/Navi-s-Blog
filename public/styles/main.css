@@ -117,22 +117,26 @@ a{
     font-style: italic;
     padding-bottom: 30px;
 }
-.compose .btn{
+ .btn{
     border-radius: 5px;
-    width: 100px;
+    width: 200px;
     font-size: 18pt;
     letter-spacing: 1px;
     outline: none;
     background-color: green;
     border: none;
-    color: white;
+    color: wheat;
     font-weight: 500;
     padding: 10px;
     cursor: pointer;
 }
+.btn a{
+    color: wheat;
+    font-weight: bold;
+}
 .btn:hover{
     box-shadow:inset 2px 2px 10px yellow;
-    background-color: rgba(0, 128, 0, 0.589);
+    background-color: rgba(0, 128, 0, 0.738);
 }
 #posts p a:hover{
     text-decoration: underline;
