@@ -145,10 +145,14 @@ input, textarea{
 }
 
 #btns .btn, #btns .btn a{
-            width: 48%;
-
+            width:150px;
+            margin: 10px;
 }
-
+#btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:right;
+}
 .btn a{
     background: none;
 }
@@ -160,7 +164,10 @@ input, textarea{
 .delete{
     background: red;
 }
-
+.delete:hover{
+    box-shadow:inset 2px 2px 10px green;
+    background-color: red;
+}
 #posts p a:hover{
     text-decoration: underline;
     color: blue;
@@ -185,6 +192,13 @@ input, textarea{
     
         font-size: 14pt;
     }
+    #btns{
+        justify-content:space-between;
+    }
+    #btns .btn, #btns .btn a{
+        margin: 0;
+        width:100px;
+}
     .content{
         font-size: 10pt;
     }
@@ -194,11 +208,7 @@ input, textarea{
     .btn, .btn a{
         font-size: 16px;
     }
-    #btns{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+   
     .compose .input{
         width: 100%;
     }
