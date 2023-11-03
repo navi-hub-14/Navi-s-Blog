@@ -109,7 +109,7 @@ input, textarea{
 }
 
 .compose .input{
-    width: 60%;
+    width: 70%;
     padding: 10px;
     border-radius: 10px;
     font-size: 1rem;
@@ -140,7 +140,7 @@ input, textarea{
     padding-inline: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 70%;
+    width: 150px;
 
 }
 
@@ -191,6 +191,10 @@ input, textarea{
     .tag, .subtag{
     
         font-size: 14pt;
+    }
+
+    .compose .input{
+    width: 100%;
     }
     #btns{
         justify-content:space-between;

@@ -58,8 +58,8 @@ app.get("/compose", (req, res) => {
 })
 
 app.post("/compose", (req, res) => {
-    const {day, title, content, name} = req.body;
-    const compose = {day, title, content, name};
+    const {day, time, title, content, name} = req.body;
+    const compose = {day, time, title, content, name};
     posts.push(compose);
     res.redirect("/");
 })
@@ -76,8 +76,9 @@ app.get("/posts/:postName", (req, res) => {
 
             res.render("post.ejs",
                 {
-                    title: post.title,
                     day: post.day,
+                    time: post.time,
+                    title: post.title,
                     content: post.content,
                     name: post.name,
                     index: id
@@ -116,8 +117,8 @@ app.get("/edit/:index", (req, res) => {
 app.post("/edit/:index", (req, res) => {
 
     const id = req.params.index;
-    const {title, day, content, name} = req.body;
-    posts[id] = {title, day, content, name};
+    const {day, time, title, content, name} = req.body;
+    posts[id] = {title, day, time, content, name};
     res.redirect("/");
    
 })
