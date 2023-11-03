@@ -8,11 +8,12 @@
 </section>
 
 <section id="posts" class="section container">
-   <%    posts.forEach((post)=>{  %>
-      <h3 class="content day"><%= post.day %></h3>
+   <%    posts.slice().reverse().forEach((post, id)=>{  %>
+      <hr/> <br/>
+      <h3 class="content day"><%= post.day %> <%= post.time  %></h3>
       <h1 class="subtag inputTitle"><%= post.title %></h1><br>
    <p class="content">
-       <%= post.input.slice(0,97)+"..." %> <a href="/posts/<%= post.title %>">Read More</a>
+       <%= post.content.slice(0,97)+"..." %> <a href="/posts/<%= posts.length - 1 - id %>">Read More</a>
    </p>
    <%    }) %>
    

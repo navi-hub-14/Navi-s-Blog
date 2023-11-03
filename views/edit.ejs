@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs")  %>
+
+
+<section id="edit" class="section container">
+    <h1 class="tag">Edit</h1>
+    <form action="/edit/<%= id  %>" method="POST" class="compose">
+        <input type="text"  name="day" class="date input"  value = "<%= post.day %>">
+        <input type="text" name="title" class="title input"  required value= "<%= post.title %>">
+        <textarea id="wide-text" name="content" class="input" rows="5" cols="40" required><%= post.content %></textarea>
+        <input type="text" name="name" class="title input" value= "<%= post.name %>">
+        <input type="submit" class="btn" value="Publish"/>
+    </form>
+</section>
+
+<%- include("partials/footer.ejs")  %>

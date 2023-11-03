@@ -3,9 +3,10 @@
 <section id="compose" class="section container">
     <h1 class="tag">Compose</h1>
     <form action="/compose" method="POST" class="compose">
-        <input type="text"  name="day" class="date input"  value = "<%= date  %>, <%= month  %>, <%= year  %>">
+        <input type="text"  name="day" class="date input"  value = "<%= day  %> <%= time %>">
         <input type="text" name="title" class="title input" placeholder="Title" required>
-        <textarea id="wide-text" name="input" class="input" rows="5" cols="40" required placeholder="Enter your thoughts"></textarea>
+        <textarea id="wide-text" name="content" class="input" rows="5" cols="40" required placeholder="Enter your thoughts"></textarea>
+        <input type="text" name="name" class="title input" placeholder="Enter name" >
         <input type="submit" class="btn" value="Publish"/>
     </form>
 </section>

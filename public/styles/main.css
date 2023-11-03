@@ -1,5 +1,6 @@
 body{
     background-color: mistyrose;
+    transition: all 0.3s linear;
 }
 *{
     margin: 0;
@@ -14,8 +15,13 @@ body{
 }
 .section{
     padding-block: 50px;
+    margin-bottom: 30px;
 }
-.container{
+#about{
+    line-height: 1px;
+    padding-top: 30px;
+}
+.container, #btns{
     width: 60vw;
     margin: auto;
 }
@@ -56,7 +62,7 @@ body{
 }
 .navbar .list li{
     list-style: none;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     cursor: pointer;
 }
 
@@ -79,7 +85,9 @@ a{
     border-radius: 20px;
     filter: drop-shadow(3px 3px 15px rgb(255, 0, 0))
 }
-
+input, textarea{
+    border: none;
+}
 .foot{
     position: fixed;
     display: flex;
@@ -113,8 +121,8 @@ a{
     padding-bottom: 0; 
    
 }
-.day{
-    font-size: 18pt;
+.day, .name{
+    font-size: 16pt;
     font-weight: 200;
     font-style: italic;
 }
@@ -128,11 +136,19 @@ a{
     border: none;
     color: wheat;
     font-weight: bold;
-    padding: 10px;
+    padding-block: 10px;
+    padding-inline: 5px;
     cursor: pointer;
     font-size: 16px;
-        width: 25%;
+    width: 70%;
+
 }
+
+#btns .btn, #btns .btn a{
+            width: 48%;
+
+}
+
 .btn a{
     background: none;
 }
@@ -141,18 +157,30 @@ a{
     background-color: rgba(0, 128, 0, 0.738);
 }
 
+.delete{
+    background: red;
+}
+
 #posts p a:hover{
     text-decoration: underline;
     color: blue;
+}
+
+
+#post .name{
+    float: right;
+    padding-bottom: 20px;
+    font-size: 15pt;
 }
 
 @media screen and (max-width: 550px) {
     .navbar{
         font-size: 10pt;
     }
-    .navbar .list{
-        flex-direction: column;
+    .navbar .list li{
+        padding-inline: 0;
     }
+    
     .tag, .subtag{
     
         font-size: 14pt;
@@ -165,10 +193,20 @@ a{
     }
     .btn, .btn a{
         font-size: 16px;
-        width: 50%;
     }
-
+    #btns{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .compose .input{
         width: 100%;
     }
+}
+
+@media screen and (max-width: 350px) {
+ .navbar .list{
+        flex-direction: column;
+    }
+    
 }

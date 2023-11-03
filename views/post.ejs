@@ -1,10 +1,20 @@
 
 <%- include("partials/header.ejs")  %>
-<section id=" inidividual" class="section container">
+<section  id="post" class="section container">
     <h3 class="tag day"><%= day %></h3><br>
-    <h1 class=" inputTitle"><%= title %></h1><br>
-    <p class="content">
+    <h1 class=" inputTitle" name="title"><%= title %></h1><br>
+    <p class="content" name="input">
         <%= content  %>
     </p>
+    <p class="name" name="name">
+        <%= name  %>
+    </p>
+    <br/><br/>
+    <div id="btns">
+    <button  type="submit" class="btn edit"><a href="/edit/<%= index %>">Edit</a></button>
+    <button type="submit" class="btn delete"><a href="/delete/<%= index %>">Delete</a></button>
+    </div>
 </section>
+
+
 <%- include("partials/footer.ejs")  %>
